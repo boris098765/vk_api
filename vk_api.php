@@ -21,13 +21,13 @@ class VK {
 
 	public function get_token_link(){
 		if($this->client_id==''){
-			return 'В классе отсутствует client_id!'."\n";
+			return 'В классе отсутствует client_id!';
 		}elseif($this->scope==''){
-			return 'В классе отсутствует scope!'."\n";
+			return 'В классе отсутствует scope!';
 		}elseif($this->v==''){
-			return 'В классе отсутствует v!'."\n";
+			return 'В классе отсутствует v!';
 		}else{
-			return 'https://oauth.vk.com/authorize?client_id='.$this->client_id.'&display=popup&response_type=token&v='.$this->v.'&scope='.implode(',', $this->scope)."\n";
+			return 'https://oauth.vk.com/authorize?client_id='.$this->client_id.'&display=popup&response_type=token&v='.$this->v.'&scope='.implode(',', $this->scope);
 		}
 	}
 
@@ -66,9 +66,9 @@ class VK {
 		    )));
 		    $result = json_decode($result, true);
 		    if(!isset($result['error'])){
-		    	return $result['response']."\n";
+		    	return $result['response'];
 		    }else{
-		    	return "Ошибка!!!\n".$result."\n";
+		    	return "Ошибка!!!\n".$result;
 		    }
 		}
 	}
@@ -76,48 +76,48 @@ class VK {
 	//Отправка текстового сообщения пользователю
 	public function send_message_to_user($user_id='', $message=''){
 	    if($user_id==''){
-	    	return 'Ожидается user_id!'."\n";
+	    	return 'Ожидается user_id!';
 	    }elseif($message==''){
-	    	return 'Ожидается message!'."\n";
+	    	return 'Ожидается message!';
 	    }else{
 	    	$result = $this->send($user_id,'','','','',$message);
-	    	return $result."\n";
+	    	return $result;
 	    }
 	}
 
 	//Отправка текстового сообщения в беседу
 	public function send_message_to_chat($chat_id='', $message=''){
 	    if($chat_id==''){
-	    	return 'Ожидается chat_id!'."\n";
+	    	return 'Ожидается chat_id!';
 	    }elseif($message==''){
-	    	return 'Ожидается message!'."\n";
+	    	return 'Ожидается message!';
 	    }else{
 	    	$result = $this->send('','','',$chat_id,'',$message);
-	    	return $result."\n";
+	    	return $result;
 	    }
 	}
 
 	//Отправка стикера пользователю
 	public function send_sticker_to_user($user_id='', $sticker_id=''){
 	    if($user_id==''){
-	    	return 'Ожидается user_id!'."\n";
+	    	return 'Ожидается user_id!';
 	    }elseif($sticker_id==''){
-	    	return 'Ожидается sticker_id!'."\n";
+	    	return 'Ожидается sticker_id!';
 	    }else{
 	    	$result = $this->send($user_id,'','','','','','','','','',$sticker_id);
-	    	return $result."\n";
+	    	return $result;
 	    }
 	}
 
 	//Отправка стикера в беседу
 	public function send_sticker_to_chat($chat_id='', $sticker_id=''){
 	    if($chat_id==''){
-	    	return 'Ожидается chat_id!'."\n";
+	    	return 'Ожидается chat_id!';
 	    }elseif($sticker_id==''){
-	    	return 'Ожидается sticker_id!'."\n";
+	    	return 'Ожидается sticker_id!';
 	    }else{
 	    	$result = $this->send('','','',$chat_id,'','','','','','',$sticker_id);
-	    	return $result."\n";
+	    	return $result;
 	    }
 	}
 }
