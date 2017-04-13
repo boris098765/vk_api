@@ -1,5 +1,5 @@
 <?
-include 'libs/vk_api.php';
+include 'vk_api.php';
 
 $VK = new VK;
 $VK->client_id = 'your_app_client_id';
