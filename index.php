@@ -1,11 +1,11 @@
 <?
 include 'libs/vk_api.php';
 
-$account = new VK;
-$account->client_id = '5956974';
-$account->token     = 'cfefc92e48c597a6491ed71bb040c16ecfe867e4a80ab9fe0e59da646f68e8d5e29cfcc607bfcbb11fbfe';
-$account->v         = '5.63';
+$VK = new VK;
+$VK->client_id = 'your_app_client_id';
+$VK->token     = 'your_access_token';
+$VK->v         = '5.63';
 
-//print_r($account->send_message_to_chat('55', 'Это сообщение отправлено моим ботом!'));
-//print_r($account->send_message_to_user('152498015', 'Это сообщение отправлено моим ботом!'));
+//print_r($VK->send_message_to_chat('99', 'Это сообщение отправлено ботом!'));
+//print_r($VK->send_message_to_user('999999999', 'Это сообщение отправлено ботом!'));
 ?>
