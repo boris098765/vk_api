@@ -78,8 +78,8 @@ class VK {
 
 		//Отправка текстового сообщения пользователю
 		public function send_message_to_user($user_id='', $message='', $domain=''){
-		    if($user_id==''){
-		    	return 'Ожидается user_id!';
+		    if($user_id=='' and $domain==''){
+		    	return 'Ожидается user_id или domain!';
 		    }elseif($message==''){
 		    	return 'Ожидается message!';
 		    }else{
@@ -102,8 +102,8 @@ class VK {
 
 		//Отправка стикера пользователю
 		public function send_sticker_to_user($user_id='', $sticker_id='', $domain=''){
-		    if($user_id==''){
-		    	return 'Ожидается user_id!';
+		    if($user_id=='' and $domain==''){
+		    	return 'Ожидается user_id или domain!';
 		    }elseif($sticker_id==''){
 		    	return 'Ожидается sticker_id!';
 		    }else{
